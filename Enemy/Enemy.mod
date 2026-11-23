@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ModuleFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<UiMod name="Enemy" version="3.0.0" date="2026-11-23" autoenabled="true">
+	<UiMod name="Enemy" version="@project-version@" date="@project-date@" autoenabled="true">
 
 		<VersionSettings gameVersion="1.4.8" windowsVersion="1.0" savedVariablesVersion="1.0" />
 

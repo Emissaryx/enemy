@@ -5,3 +5,5 @@ Community-maintained Enemy build for Return of Reckoning. This source matches th
 Enemy is based on the upstream Enemy addon. Original author attribution is retained in `Enemy/Enemy.mod`.
 
 Contributions and issue reports are welcome. Please keep upstream attribution and include a clear summary with pull requests. Future releases will be published on the RoR Addons listing.
+
+The module version/date fields use the registry placeholders @project-version@ and @project-date@; tagged releases on the RoR listing fill them in. Use the published package for a ready-to-install build.
