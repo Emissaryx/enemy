@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+
+	<Assets>
+		<Texture name="enemy_mark_arrowdown" file="textures\mark_arrow_down.dds" />
+		<Texture name="enemy_mark_arrowdown_old" file="textures\mark_arrow_down-old.dds" />
+		<Texture name="enemy_mark_arrow_broadhead" file="textures\mark_arrow_broadhead.dds" />
+		<Texture name="enemy_mark_arrow_chevron" file="textures\mark_arrow_chevron.dds" />
+		<Texture name="enemy_mark_arrow_spearpoint" file="textures\mark_arrow_spearpoint.dds" />
+		<Texture name="enemy_mark_arrow_sun" file="textures\mark_arrow_sun.dds" />
+		<Texture name="enemy_mark_arrow_crown" file="textures\mark_arrow_crown.dds" />
+		<Texture name="enemy_mark_arrow_crown_emoji" file="textures\mark_arrow_crown_emoji.dds" />
+		<Texture name="enemy_mark_arrow_shield" file="textures\mark_arrow_shield.dds" />
+		<Texture name="enemy_mark_arrow_shield_red" file="textures\mark_arrow_shield_red.dds" />
+		<Texture name="enemy_mark_arrow_healer_cross" file="textures\mark_arrow_healer_cross.dds" />
+		<Texture name="enemy_mark_arrow_heart" file="textures\mark_arrow_heart.dds" />
+		<Texture name="enemy_mark_arrow_diamond" file="textures\mark_arrow_diamond.dds" />
+		<Texture name="enemy_mark_arrow_moon" file="textures\mark_arrow_moon.dds" />
+		<Texture name="enemy_mark_arrow_skull" file="textures\mark_arrow_skull.dds" />
+		<Texture name="enemy_mark_arrow_sugar_skull" file="textures\mark_arrow_sugar_skull.dds" />
+		<Texture name="enemy_mark_arrow_crosshair" file="textures\mark_arrow_crosshair.dds" />
+		<Texture name="enemy_mark_arrow_lightning" file="textures\mark_arrow_lightning.dds" />
+		<Texture name="enemy_mark_arrow_eye" file="textures\mark_arrow_eye.dds" />
+		<Texture name="enemy_mark_arrow_crosshair_grim" file="textures\mark_arrow_crosshair_grim.dds" />
+		<Texture name="enemy_mark_arrow_lightning_grim" file="textures\mark_arrow_lightning_grim.dds" />
+		<Texture name="enemy_mark_arrow_eye_grim" file="textures\mark_arrow_eye_grim.dds" />
+		<Texture name="enemy_mark_arrow_poop" file="textures\mark_arrow_poop.dds" />
+		<Texture name="enemy_mark_arrow_pill_red" file="textures\mark_arrow_pill_red.dds" />
+		<Texture name="enemy_mark_arrow_pill_blue" file="textures\mark_arrow_pill_blue.dds" />
+	</Assets>
+
+	<Windows>
+		<Window name="EnemyMarkTemplateShapeSelectorTemplate">
+			<Size>
+				<AbsPoint x="720" y="38" />
+			</Size>
+			<Windows>
+				<Label name="$parentLabel" font="font_chat_text" warnOnTextCropped="false">
+					<Size>
+						<AbsPoint x="200" y="30" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+					</Anchors>
+				</Label>
+				<Button name="$parentValue" inherits="EA_Button_DefaultText" handleinput="true">
+					<Size>
+						<AbsPoint x="500" y="36" />
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentLabel">
+							<AbsPoint x="0" y="-2" />
+						</Anchor>
+					</Anchors>
+					<Windows>
+						<DynamicImage name="$parentIcon" texture="enemy_mark_arrowdown" handleinput="false">
+							<TexDims x="100" y="200" />
+							<Size>
+								<AbsPoint x="22" y="34" />
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left">
+									<AbsPoint x="8" y="0" />
+								</Anchor>
+							</Anchors>
+						</DynamicImage>
+						<Label name="$parentName" font="font_chat_text" handleinput="false" warnOnTextCropped="false">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+									<AbsPoint x="8" y="0" />
+								</Anchor>
+								<Anchor point="right" relativePoint="right" />
+							</Anchors>
+						</Label>
+					</Windows>
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="Enemy.MarksUI_MarkConfigDialog_OpenShapePicker" />
+						<EventHandler event="OnMouseOver" function="Enemy.ConfigurationWindow_ShowTooltip" />
+					</EventHandlers>
+				</Button>
+			</Windows>
+		</Window>
+
+		<Window name="EnemyMarkShapePickerRowTemplate">
+			<Size>
+				<AbsPoint x="440" y="46" />
+			</Size>
+			<Windows>
+				<FullResizeImage name="$parentBackground" inherits="EA_FullResizeImage_TintableSolidBackground" handleinput="false">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>
+				</FullResizeImage>
+				<Button name="$parentSelect" inherits="EA_Button_DefaultText" handleinput="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>
+					<Windows>
+						<DynamicImage name="$parentIcon" texture="enemy_mark_arrowdown" handleinput="false">
+							<TexDims x="100" y="200" />
+							<Size>
+								<AbsPoint x="24" y="42" />
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left">
+									<AbsPoint x="8" y="0" />
+								</Anchor>
+							</Anchors>
+						</DynamicImage>
+						<Label name="$parentName" font="font_clear_small_bold" handleinput="false" warnOnTextCropped="false">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+									<AbsPoint x="10" y="0" />
+								</Anchor>
+								<Anchor point="right" relativePoint="right" />
+							</Anchors>
+						</Label>
+					</Windows>
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="Enemy.MarksUI_MarkConfigDialog_SelectShape" />
+					</EventHandlers>
+				</Button>
+			</Windows>
+		</Window>
+
+		<Window name="EnemyMarkShapePicker" movable="true" inherits="EA_Window_Default">
+			<Size>
+				<AbsPoint x="500" y="480" />
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="Root">
+					<AbsPoint x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultFrame">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<AbsPoint x="0" y="32" />
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" />
+					</Anchors>
+				</Window>
+				<Window name="$parentTitleBar" inherits="EA_TitleBar_Default" />
+				<Button name="$parentClose" inherits="EA_Button_DefaultWindowClose">
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="Enemy.MarksUI_MarkConfigDialog_HideShapePicker" />
+					</EventHandlers>
+				</Button>
+				<ListBox name="$parentList" scrollbar="EA_ScrollBar_DefaultVerticalChain" rowdef="EnemyMarkShapePickerRowTemplate" visiblerows="8" rowspacing="0">
+					<Size>
+						<AbsPoint x="460" y="402" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar">
+							<AbsPoint x="20" y="12" />
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright">
+							<AbsPoint x="-18" y="-18" />
+						</Anchor>
+					</Anchors>
+					<ListData table="Enemy.markShapePickerData" populationfunction="Enemy.MarksUI_MarkConfigDialog_PopulateShapePicker" />
+				</ListBox>
+			</Windows>
+			<EventHandlers>
+				<EventHandler event="OnShown" function="WindowUtils.OnShown" />
+				<EventHandler event="OnHidden" function="WindowUtils.OnHidden" />
+				<EventHandler event="OnKeyEscape" function="Enemy.MarksUI_MarkConfigDialog_HideShapePicker" />
+			</EventHandlers>
+		</Window>
+
+		<Window name="EnemyMark">
+			<Size>
+				<AbsPoint x="100" y="200" />
+			</Size>
+
+			<Windows>
+				<Window name="$parentContent">
+					<Size>
+						<AbsPoint x="100" y="200" />
+					</Size>
+
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+					</Anchors>
+
+					<Windows>
+						<DynamicImage name="$parentBackground" texture="enemy_mark_arrowdown" handleinput="false">
+							<TexCoords x="0" y="0" />
+							<TexDims x="100" y="200" />
+
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+							</Anchors>
+						</DynamicImage>
+
+						<Label name="$parentText" font="font_clear_large_bold" textalign="bottomcenter" warnOnTextCropped="false" handleinput="false">
+							<Size>
+								<AbsPoint x="200" y="200" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<AbsPoint x="0" y="-20" />
+								</Anchor>
+							</Anchors>
+						</Label>
+
+						<DynamicImage name="$parentIcon" handleinput="false">
+							<TexDims x="32" y="32" />
+							<Size>
+								<AbsPoint x="32" y="32" />
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentText">
+									<AbsPoint x="0" y="-10" />
+								</Anchor>
+							</Anchors>
+						</DynamicImage>
+					</Windows>
+
+					<EventHandlers>
+						<EventHandler event="OnLButtonDown" function="Enemy.MarkUI_EnemyMark_OnLButtonDown" />
+						<EventHandler event="OnRButtonUp" function="Enemy.MarkUI_EnemyMark_OnRButtonUp" />
+					</EventHandlers>
+				</Window>
+			</Windows>
+		</Window>
+
+
+
+		<Window name="EnemyMarkConfigDialog" movable="true" inherits="EA_Window_Default">
+			<Size>
+				<AbsPoint x="660" y="720" />
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="Root">
+					<AbsPoint x="0" y="0" />
+				</Anchor>
+			</Anchors>
+
+			<Windows>
+				<!-- Init -->
+				<Window name="$parentBackground" inherits="EA_Window_DefaultFrame">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<AbsPoint x="0" y="32" />
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" />
+					</Anchors>
+				</Window>
+
+				<Window name="$parentTitleBar" inherits="EA_TitleBar_Default" />
+
+				<Button name="$parentClose" inherits="EA_Button_DefaultWindowClose">
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="Enemy.MarksUI_MarkConfigDialog_Hide" />
+					</EventHandlers>
+				</Button>
+
+				<!-- Content -->
+				<Window name="$parentConfig">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar">
+							<AbsPoint x="40" y="30" />
+						</Anchor>
+					</Anchors>
+				</Window>
+
+				<Window name="$parentConfig2">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentConfig">
+							<AbsPoint x="0" y="0" />
+						</Anchor>
+					</Anchors>
+				</Window>
+
+				<!-- Content: example -->
+				<Window name="$parentExample" inherits="EnemyMark" handleinput="false">
+					<Size>
+						<AbsPoint x="100" y="200" />
+					</Size>
+
+					<Anchors>
+						<Anchor point="right" relativePoint="left" relativeTo="$parent">
+							<AbsPoint x="30" y="0" />
+						</Anchor>
+					</Anchors>
+				</Window>
+
+				<!-- Bottom panel -->
+				<Window name="$parentButtonBackground" inherits="EA_Window_DefaultButtonBottomFrame" layer="background">
+					<Size>
+						<AbsPoint x="0" y="65" />
+					</Size>
+				</Window>
+
+				<Button name="$parentOkButton" inherits="EA_Button_DefaultResizeable">
+					<Size>
+						<AbsPoint x="120" y="40" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom">
+							<AbsPoint x="-70" y="-10" />
+						</Anchor>
+					</Anchors>
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="Enemy.MarksUI_MarkConfigDialog_Ok" />
+					</EventHandlers>
+				</Button>
+				<Button name="$parentCancelButton" inherits="EA_Button_DefaultResizeable">
+					<Size>
+						<AbsPoint x="120" y="40" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom">
+							<AbsPoint x="70" y="-10" />
+						</Anchor>
+					</Anchors>
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="Enemy.MarksUI_MarkConfigDialog_Hide" />
+					</EventHandlers>
+				</Button>
+			</Windows>
+
+			<EventHandlers>
+				<EventHandler event="OnShown" function="WindowUtils.OnShown" />
+				<EventHandler event="OnHidden" function="WindowUtils.OnHidden" />
+				<EventHandler event="OnKeyEscape" function="Enemy.MarksUI_MarkConfigDialog_Hide" />
+			</EventHandlers>
+		</Window>
+	</Windows>
+</Interface>
